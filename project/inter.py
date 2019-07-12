@@ -1,4 +1,3 @@
-
 def opening(filename):
     f = open(filename, "r")
     run(f.read())
@@ -46,9 +45,22 @@ def run(code):
             if bf[x]: i = bodies[i]
         i += 1
         
+def main():
+    input_value = '0'
+    while (input_value < '4'):
+        input_value = input('======Brainfuck interprete====== \n Choose your fighter: \n 1.Code from .txt \n 2.Code from input \n 3.Exit \n')
+        if input_value == '1':
+            print('Result: ')
+            opening("brainfuck.txt")
+        elif input_value == '2':
+            code = input('Enter your code in one line: \n')
+            print('Result: ')
+            run(code)             
+        elif input_value == '3':
+            exit(0)
+        
 
-opening('brainfuck.txt')
-
+if __name__ == "__main__": main()
 
 
 
